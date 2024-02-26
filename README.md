@@ -22,14 +22,14 @@ These are some important aspects of the source data:
 (Note - This task aims to test the SQL skills)\
 **While using the dataset, please provide SQL queries and their outcome to answer the following questions:**\
 1. **Calculate the total products and revenue sold over time by quarter and identify the month where the revenue sold was 10% above the average.**\
-  [DBT model](models\reporting\sales\sales_per_quarter.sql)\
-  [SQL output](outputs\sales_per_quarter.csv)
+  [DBT model](models/reporting/sales/sales_per_quarter.sql)\
+  [SQL output](outputs/sales_per_quarter.csv)
 2. **List the counties where the amount (in dollars) of purchases transactions went over $100K.**\
-  [DBT model](models\reporting\sales\six_figures_counties_revenue.sql)\
-  [SQL output](outputs\six_figures_counties_revenue.csv)
+  [DBT model](models/reporting/sales/six_figures_counties_revenue.sql)\
+  [SQL output](outputs/six_figures_counties_revenue.csv)
 3. **Identify the top 10 stores with more revenue in sold products and the bottom stores with least revenue in sold products (apply a deduplication logic in case it’s needed).**\
-  [DBT model](models\reporting\sales\top_and_bottom_10_store_revenues.sql)\
-  [SQL output](outputs\top_and_bottom_10_store_revenues.csv)
+  [DBT model](models/reporting/sales/top_and_bottom_10_store_revenues.sql)\
+  [SQL output](outputs/top_and_bottom_10_store_revenues.csv)
 
 ## Task #2 (Data Modeling)
 (Note - This task aims to test the data modeling skills. Feel free to use any data modeling techniques)\
@@ -62,7 +62,7 @@ The reporting layer is the interface for non-technical users and consuptions tha
 
 #### six_figures_counties_revenue
   ![six_figures_counties_revenue][six_figures_counties_revenue] 
-  \
+  
   *I’m not including the store dimensions due to the inconsistencies described in “Data Exploration” topic.
 
 ## Task #3 (Event Pipeline)
@@ -103,10 +103,10 @@ DBT Core is an open source and easy implementation tool that simplifies the task
   All SQL scripts have been encapsulated into DBT model files (within the "models" directory), which are managed in this Git repository. This approach enables us to effectively version control the scripts, ensuring traceability and collaboration among team members.
 
 2. Data Quality:\
-  DBT provides robust features for data quality testing. We've utilized built-in DBT tests to validate uniqueness and non-null values within the data models (as you can see [here](models\reporting\sales\reporting_sales.yml)). Additionally, a [custom generic test](tests\generic\data_freshness_test.sql) was developed to ensure data freshness.
+  DBT provides robust features for data quality testing. We've utilized built-in DBT tests to validate uniqueness and non-null values within the data models (as you can see [here](models/reporting/sales/reporting_sales.yml)). Additionally, a [custom generic test](tests/generic/data_freshness_test.sql) was developed to ensure data freshness.
 
 3. Code Reusability:\
-  To streamline development and improve code readability, a [DBT macro](macros\util_macros_data_cleaning.sql) was created to facilitate the replication of transformations across different columns. This enhancement significantly boosts development speed and promotes code consistency throughout the project.
+  To streamline development and improve code readability, a [DBT macro](macros/util_macros_data_cleaning.sql) was created to facilitate the replication of transformations across different columns. This enhancement significantly boosts development speed and promotes code consistency throughout the project.
 
 4. Data Lineage:\
   Understanding the lineage of data is crucial for ensuring data accuracy, compliance, and transparency. In this project, we are actively working on establishing comprehensive data lineage using DBT [{{ref}}](https://docs.getdbt.com/reference/dbt-jinja-functions/ref) and [{{source}}](https://docs.getdbt.com/reference/dbt-jinja-functions/source) native functions.
@@ -116,9 +116,9 @@ It was integrated SQLFluff into the project to ensure consistent and standardize
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[store_name-screenshot]: images\store_name_and_number.png
-[lineage-screenshot]: images\lineage.png
-[top_and_bottom_10_store_revenues]: images\top_and_bottom_10_store_revenues.png
-[sales_per_quarter]: images\sales_per_quarter.png
-[six_figures_counties_revenue]: images\six_figures_counties_revenue.png
-[solution]: images\solution.png
+[store_name-screenshot]: images/store_name_and_number.png
+[lineage-screenshot]: images/lineage.png
+[top_and_bottom_10_store_revenues]: images/top_and_bottom_10_store_revenues.png
+[sales_per_quarter]: images/sales_per_quarter.png
+[six_figures_counties_revenue]: images/six_figures_counties_revenue.png
+[solution]: images/solution.png
