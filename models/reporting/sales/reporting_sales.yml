@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: sales_per_quarter
+    description: This model aggregates the sales data by quarter.
+    columns:
+      - name: sale_year_quarter
+        tests:
+          - unique
+          - not_null
+     

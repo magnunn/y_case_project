@@ -1,0 +1,60 @@
+version: 2
+
+sources:
+  - name: bigquery-public-data.iowa_liquor_sales
+    database: bigquery-public-data
+    schema: iowa_liquor_sales
+    tables:
+      - name: sales
+        description: This table contains the sales data for the state of Iowa.
+        columns:
+          - name: invoice_and_item_number
+            description: The unique identifier for the sale.
+          - name: date
+            description: The date of the sale.
+          - name: store_number
+            description: The store number where the sale occurred.
+          - name: store_name
+            description: The name of the store where the sale occurred.
+          - name: address
+            description: The address of the store where the sale occurred.
+          - name: city
+            description: The city where the sale occurred.
+          - name: zip_code
+            description: The zip code of the store where the sale occurred.
+          - name: store_location
+            description: The location of the store where the sale occurred.
+          - name: county_number
+            description: The county number where the sale occurred.
+          - name: county
+            description: The county where the sale occurred.
+          - name: category
+            description: The category of the item sold.
+          - name: category_name
+            description: The name of the category of the item sold.
+          - name: vendor_number
+            description: The vendor number of the item sold.
+          - name: vendor_name
+            description: The name of the vendor of the item sold.
+          - name: item_number
+            description: The item number of the item sold.
+          - name: item_description
+            description: The description of the item sold.
+          - name: pack
+            description: The pack size of the item sold.
+          - name: bottle_volume_ml
+            description: The volume of the bottle sold in milliliters.
+          - name: state_bottle_cost
+            description: The cost of the bottle to the store.
+          - name: state_bottle_retail
+            description: The retail price of the bottle to the customer.
+          - name: bottles_sold
+            description: The number of bottles sold.
+          - name: sale_dollars
+            description: The total sale dollars of the transaction.
+          - name: volume_sold_liters
+            description: The volume of the bottle sold in liters.
+          - name: volume_sold_gallons
+            description: The volume of the bottle sold in
+          - name: ingestion_datetime
+            description: The datetime the data was ingested into the table.

@@ -1,0 +1,20 @@
+version: 2
+
+models:
+  - name: clean_sales
+    description: This model contains the cleaned sales data.
+    columns:
+      - name: invoice_and_item_number
+        tests:
+          - unique
+          - not_null
+      - name: sale_date
+        tests:
+          - not_null
+          - data_freshness_test:
+              days: 35
+              severity: warn
+          - data_freshness_test:
+              days: 45
+              severity: error
+      
